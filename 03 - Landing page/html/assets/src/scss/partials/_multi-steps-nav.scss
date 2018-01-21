@@ -1,0 +1,104 @@
+.multi-steps-form {
+  .tabs {
+    background: $lightColor;
+    @include border-radius(30px 30px 30px 30px);
+    overflow: hidden;
+    margin-bottom: 55px;
+    li {
+      float: left;
+      width: 33.33333%;
+      &:first-child {
+        button {
+          &:after, &:before {
+            display: none;
+          }
+        }
+      }
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px 0px 12px 0;
+      outline: none;
+      cursor: pointer;
+      position: relative;
+      pointer-events: none;
+      &:after, &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 26px 0 26px 18px;
+        border-color: transparent transparent transparent $neutralLightColor;
+        @include transform(translateX(-50%));
+      }
+      &:after {
+        border-color: transparent transparent transparent $lightColor;
+        left: -2px;
+      }
+      &.active, &.done {
+        pointer-events: all;
+        .status-title {
+          color: $fontColorBase;
+        }
+        .status-bullet {
+          background: $brandColorAlt;
+        }
+      }
+
+      &.done {
+        .status-bullet {
+          text-indent: -9999px;
+          &:before {
+            content: "";
+            display: block;
+            width: 13px;
+            height: 10px;
+            border-left: 4px solid $lightColor;
+            border-bottom: 4px solid $lightColor;
+            @include transform(translate(-50%, -50%) rotate(-45deg));
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -2px;
+          }
+        }
+        .status-title {
+          color: $brandColorAlt;
+        }
+      }
+    }
+
+    .status-bullet,
+    .status-title {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .status-bullet {
+      position: relative;
+      margin: 0 10px 0 0;
+      width: 25px;
+      height: 25px;
+      background: $neutralColor;
+      color: $lightColor;
+      @include border-radius(50%);
+      font-size: 15px;
+      font-weight: 600;
+      padding-top: 5px;
+    }
+    .status-title {
+      font-family: $fontMain;
+      text-transform: uppercase;
+      font-size: 10px;
+      color: $neutralColor;
+      @include breakpoint(large) {
+        font-size: 13px;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+// Compass
+@import "compass/css3";
+@import "compass/typography";
+
+// Settings
+@import "settings/base";
+
+// Libraries
+@import "partials/libraries";
+
+// Reset
+@import "compass/reset";
+
+// Fonts
+@import "partials/fonts";
+
+// Partials
+@import "partials/reusable-elements",
+        "partials/footer",
+        "partials/forms",
+        "partials/teaser",
+        "partials/carousels",
+        "partials/_multi-steps-nav",
+        "partials/header";
+
+// Base definition
+html, body {
+  background: $backgroundBase;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font: #{$baseFontWeight} #{nth($baseFontSize, 1)}/#{$baseLineHeight} $fontMain;
+  color: $fontColorBase;
+  -webkit-font-smoothing: antialiased;
+  height: auto;
+  @include breakpoint(medium) {
+    padding-left: 97px;
+  }
+}

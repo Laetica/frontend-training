@@ -1,0 +1,39 @@
+#footer {
+  padding: 14px 0;
+  @include breakpoint(medium) {
+    padding: 24px 0;
+  }
+  ul {
+   li {
+     display: inline-block;
+     position: relative;
+     font-size: 12px;
+     padding: 0 10px;
+     @include breakpoint(medium) {
+       padding: 0 20px;
+     }
+     &:before {
+       content: "";
+       display: block;
+       height: 12px;
+       width: 1px;
+       position: absolute;
+       left: 0;
+       top: 50%;
+       @include transform(translateY(-50%));
+       background: #f4f8fa;
+     }
+     &:first-child {
+       &:before {
+         display: none;
+       }
+     }
+   }
+  }
+  a {
+    color: $brandColorDark;
+    &:hover {
+      color: $brandColorAlt;
+    }
+  }
+}

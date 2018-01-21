@@ -1,0 +1,141 @@
+.table {
+  display: table;
+}
+
+h1, .h1 {
+  font-size: 25px;
+  line-height: 28px;
+  font-weight: 600;
+  margin-bottom: 22px;
+  @include breakpoint(medium) {
+    font-size: 40px;
+    line-height: 43px;
+  }
+  @include breakpoint(large) {
+    font-size: 45px;
+    line-height: 53px;
+  }
+  em {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+  }
+}
+
+h2, .h2 {
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 600;
+  @include breakpoint(large) {
+    font-size: 23px;
+    line-height: 26px;
+  }
+}
+
+h3, .h3 {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  display: block;
+  @include breakpoint(large) {
+    font-size: 20px;
+    line-height: 23px;
+  }
+}
+
+p {
+  margin-bottom: 12px;
+  em {
+    margin-bottom: 50px;
+  }
+}
+
+em {
+  font-size: 16px;
+  line-height: 20px;
+  color: $neutralDarkColor;
+  font-weight: 200;
+  @include breakpoint(medium) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.button {
+  @include border-radius($borderRadius);
+  background: $brandColorAlt;
+  color: $lightColor;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 40px;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 8px;
+  .inline & {
+    margin: 0 10px 8px 10px;
+  }
+  &:hover, &:focus {
+    background: $brandColor;
+  }
+  .label {
+    &.icon {
+      padding-left: 40px;
+      display: block;
+      position: relative;
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        @include transform(translate(0, -50%));
+      }
+    }
+    &.icon-man {
+      &:before {
+        width: 18px;
+        height: 24px;
+        background: url(#{$imgPath}/sprite.svg) no-repeat -25px -1px;
+      }
+    }
+    &.icon-label {
+      &:before {
+        width: 23px;
+        height: 23px;
+        background: url(#{$imgPath}/sprite.svg) no-repeat -1px -1px;
+      }
+    }
+  }
+}
+
+legend {
+  width: 100%;
+  display: block;
+  &.h1 {
+    margin-bottom: 40px;
+  }
+}
+
+em {
+  color: #2f3538;
+}
+
+.section-padding {
+  padding: 35px 0;
+  @include breakpoint(medium) {
+    padding: 70px 0;
+  }
+}
+
+.neutral-bg {
+  background-color: $neutralLightColor;
+}
+
+.small-margin-top {
+  margin-top: 5px;
+}

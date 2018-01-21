@@ -1,0 +1,91 @@
+// - Features
+// --------------------------------------
+
+//$useDebugGrid: false;
+
+// - Grid
+// --------------------------------------
+
+//$gridBaseSize: 18px;
+//$gridRowWidth: 1004px;
+//$gridColumnGutter: 44px;
+//$gridColumns: 12;
+
+// - Breakpoints
+// --------------------------------------
+//
+//$breakpoints: (
+//  (0, 700px), // 0 - 768px (mobile);
+//  (701px, 1000px), //768px - 1223px (tablet);
+//  (1001px, 1300px), //768px - 1299px (normal);
+//  (1301px) //1300px x ... (wide);
+//);
+
+// - Paths
+// --------------------------------------
+
+$fontsPath: '../fonts';
+$imgPath: '../img';
+
+// - Fonts
+// --------------------------------------
+
+$fontMain: 'Encode Sans Condensed', Arial, sans-serif;
+
+// - Content
+// --------------------------------------
+
+$baseFontSize: 16px;
+$baseFontWeight: 400;
+$baseLineHeight: 1.5;
+$smallFontSize: 13px;
+$titleLineHeight: 1.2;
+
+$h1Size: ('30px', '42px');
+$h2Size: ('30px', '38px');
+$h3Size: 32px;
+$h4Size: 28px;
+$h5Size: 25px;
+$h6Size: 20px;
+
+// - Spacings
+// --------------------------------------
+
+$titleSpacing: '0 0 30px';
+$contentSpacing: '0 0 16px';
+$formSpacing: ('0 0 35px');
+
+$h1Spacing: $titleSpacing;
+$h2Spacing: $titleSpacing;
+$h3Spacing: $titleSpacing;
+$h4Spacing: $titleSpacing;
+$h5Spacing: '0 0 12px'; //$titleSpacing;
+$h6Spacing: $titleSpacing;
+
+$paragraphSpacing: $contentSpacing;
+$unorderedListSpacing: $contentSpacing;
+$orderedlistSpacing: 0 0 19px 16px;
+$tableSpacing: '0 0 35px';
+
+// - Colors
+// --------------------------------------
+
+$backgroundBase: #fff;
+
+$brandColor: #2274ac;
+$brandColorAlt: #0099da;
+$brandColorDark: #33434c;
+$neutralLightColor: #eef1f4;
+$neutralColor: #bdc3c6;
+$neutralDarkColor: #808890;
+$lightColor: #fff;
+
+$fontColorBase: #1d1f20;
+$fontColorTitle: $fontColorBase;
+
+$linkColor: $brandColorAlt;
+$linkColorHover: $brandColor;
+$linkColorVisited: $fontColorBase;
+
+$borderRadius: 5px;
+

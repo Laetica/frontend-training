@@ -1,0 +1,207 @@
+body {
+  position: relative;
+  @include breakpoint(small only) {
+    padding-top: 42px;
+  }
+  .overlay {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $brandColorDark;
+    opacity: 0;
+    z-index: 2;
+  }
+  &.menu-opened {
+    .overlay {
+      display: block;
+      opacity: .8;
+    }
+  }
+}
+#header {
+  padding: 5px 0.625rem;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  background: $lightColor;
+  @include breakpoint(medium) {
+    height: 100%;
+    padding: 0;
+    width: auto;
+  }
+  #main-navigation {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+
+    box-shadow: 5px -10px 20px rgba(0,0,0,0.1);
+    background: $lightColor;
+    z-index: 2;
+    top: 42px;
+    @include transform(translateX(100%));
+    @include transition(transform .2s linear);
+    @include breakpoint(medium) {
+      width: 96px;
+    }
+    &.opened {
+      @include transform(translateX(0));
+    }
+    @include breakpoint(medium) {
+      top: 0;
+      left: 0;
+      @include transform(translateX(0));
+    }
+    &:before {
+      content: "";
+      width: 100%;
+      display: block;
+      background: $lightColor;
+      padding-top: 42px;
+      position: absolute;
+      top: 1px;
+      @include transform(translateY(-100%));
+      @include breakpoint(medium) {
+        display: none;
+      }
+    }
+    ul {
+      overflow-y: auto;
+      height: 100%;
+    }
+  }
+  .burger-menu {
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 18px;
+    margin-top: 7px;
+    cursor: pointer;
+    outline: none;
+    z-index: 3;
+    span, &:before, &:after {
+      content: "";
+      text-indent: -9999px;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: $brandColor;
+      position: absolute;
+      left: 0;
+      @include border-radius(5px);
+      @include transition(transform .3s linear, opacity .1s linear, top .3s linear, bottom .3s linear);
+    }
+    &:before {
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+    }
+    span {
+      top: 50%;
+      @include transform(translate(0, -50%));
+    }
+    &.active {
+      span {
+        @include transform(translateX(100%));
+        opacity: 0;
+      }
+      &:before {
+        top: 50%;
+        @include transform(rotate(45deg));
+      }
+      &:after {
+        top: 50%;
+        bottom: auto;
+        @include transform(rotate(-45deg));
+      }
+    }
+  }
+}
+
+.logo {
+  &:before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 32px;
+    background: url('#{$imgPath}/logo.svg') no-repeat left top;
+    background-size: 100% auto;
+  }
+}
+
+.brand {
+  .logo {
+    width: 96px;
+    height: 123px;
+    padding: 10px;
+    &:before {
+      margin: 0 auto;
+      width: 64px;
+      height: 51px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+nav {
+  ul {
+    li {
+      display: block;
+      border-top: 1px solid $neutralLightColor;
+      &:first-child {
+        border-top: 0;
+      }
+    }
+  }
+
+  .link-container {
+    width: 100%;
+    line-height: 14px;
+    @include breakpoint(medium) {
+      height: 97px;
+    }
+    .icon {
+      margin: 0 10px 0 auto;
+      display: inline-block;
+      vertical-align: middle;
+      @include breakpoint(medium) {
+        display: block;
+        margin: 0 auto 10px auto;
+      }
+    }
+    span {
+      display: inline-block;
+      @include breakpoint(medium) {
+        display: block;
+      }
+    }
+  }
+
+  a {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10px;
+    font-size: 12px;
+    color: $brandColorDark;
+    font-weight: 600;
+    @include breakpoint(medium) {
+      padding: 0 10px;
+    }
+    &:hover {
+      color: $brandColorDark;
+      svg {
+        fill: $brandColor;
+      }
+    }
+  }
+
+  svg {
+    @include transition(fill .5s linear);
+    fill: $neutralDarkColor;
+  }
+}
